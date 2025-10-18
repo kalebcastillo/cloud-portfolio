@@ -1,31 +1,56 @@
-# build output
-dist/
+# --- Terraform ---
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.tfplan
+*.backup
+*tfbackend.hcl
+# *.tfvars
+# *.auto.tfvars
+# !*.example.tfvars
 
-# generated types
-.astro/
+# --- Python ---
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+*.coverage
+.coverage.*
+.cache/
+env/
+venv/
+.venv/
 
-# dependencies
-node_modules/
-
-# logs
+# --- Node / General build tools (shared if needed) ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
-.env
-.env.production
+# --- Logs & Temp files ---
+*.log
+*.tmp
+*.swp
+*.swo
 
-# macOS-specific files
+# --- OS junk ---
 .DS_Store
+Thumbs.db
 
-.vercel
+# --- VSCode / Editor ---
+.vscode/*.code-workspace
+.vscode/*.log
+.idea/
+*.code-workspace
 
-package-lock.json
-bun.lockb
-yarn.lock
+# --- Local tooling ---
+.env
+.env.*
+.secrets
 
-# ide
-.idea
-*.iml
