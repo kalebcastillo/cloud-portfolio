@@ -1,7 +1,8 @@
 version: 2
 updates:
+  # Update npm dependencies in the site directory
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/site"
     schedule:
       interval: "daily"
     groups:
@@ -20,3 +21,13 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
+
+  # Update GitHub Actions versions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
