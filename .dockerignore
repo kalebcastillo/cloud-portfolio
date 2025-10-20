@@ -1,0 +1,64 @@
+# .dockerignore for devcontainer build
+# Exclude unnecessary files from Docker context
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Node
+site/node_modules/
+site/dist/
+site/.astro/
+site/.vercel/
+**/node_modules/
+
+# Python
+tests/.venv/
+tests/__pycache__/
+tests/.pytest_cache/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.coverage
+.coverage.*
+
+# Terraform
+infra/**/.terraform/
+infra/**/*.tfstate
+infra/**/*.tfstate.backup
+infra/**/.terraform.lock.hcl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files (sensitive)
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+dist/
+build/
+out/
+.next/
+
+# Documentation (not needed in container)
+docs/
+*.md
+!README.md
+
+# CI/CD configs
+.github/

@@ -10,9 +10,9 @@ override.tf.json
 *.tfplan
 *.backup
 *tfbackend.hcl
-# *.tfvars
-# *.auto.tfvars
-# !*.example.tfvars
+*.tfvars
+*.auto.tfvars
+!*.example.tfvars
 
 # --- Python ---
 __pycache__/
@@ -53,4 +53,8 @@ Thumbs.db
 .env
 .env.*
 .secrets
+
+# --- pnpm ---
+.pnpm-store/
+node_modules/
 
