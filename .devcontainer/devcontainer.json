@@ -10,14 +10,12 @@
     "PYTHONUNBUFFERED": "1"
   },
 
-  // Forward dev server ports (Astro tries fallback ports if primary is in use)
   "forwardPorts": [4321, 4322, 4323],
 
   "portsAttributes": {
     "4321": {
       "label": "Astro Dev Server",
-      "onAutoForward": "notify",
-      "protocol": "http"
+      "onAutoForward": "notify"
     }
   },
 
