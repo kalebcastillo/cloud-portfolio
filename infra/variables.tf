@@ -21,3 +21,8 @@ variable "environment" {
     error_message = "Environment must be 'test', 'prod', or 'preview-*'"
   }
 }
+
+variable "domain_name" {
+  description = "Root domain name for Route53 DNS records"
+  type        = string
+}

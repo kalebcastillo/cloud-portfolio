@@ -53,6 +53,22 @@ module "cloudfront" {
     Purpose     = "CDN Distribution"
   }
 
-  # Ensure S3 module is created first
   depends_on = [module.s3_static_site]
+}
+
+# Route53 DNS Module
+module "route53" {
+  source = "./modules/route53"
+
+  domain_name            = var.domain_name
+  cloudfront_domain_name = module.cloudfront.domain_name
+  cloudfront_zone_id     = "Z2FDTNDATAQYW2"
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "Terraform"
+    Purpose     = "DNS Records"
+  }
+
+  depends_on = [module.cloudfront]
 }

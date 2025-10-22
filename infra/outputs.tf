@@ -39,3 +39,14 @@ output "cloudfront_distribution_arn" {
   description = "CloudFront distribution ARN"
   value       = module.cloudfront.distribution_arn
 }
+
+# Route53 DNS Outputs
+output "hosted_zone_id" {
+  description = "Route53 hosted zone ID"
+  value       = module.route53.hosted_zone_id
+}
+
+output "root_domain_fqdn" {
+  description = "Root domain FQDN pointing to CloudFront"
+  value       = module.route53.root_domain_fqdn
+}
