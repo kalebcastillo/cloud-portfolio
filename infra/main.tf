@@ -27,7 +27,6 @@ module "s3_static_site" {
 
   environment  = var.environment
   project_name = var.project_name
-  bucket_name  = "${var.environment}-${var.project_name}-website"
 
   tags = {
     Environment = var.environment
@@ -36,3 +35,24 @@ module "s3_static_site" {
   }
 }
 
+# CloudFront CDN Module
+module "cloudfront" {
+  source = "./modules/cloudfront"
+
+  environment         = var.environment
+  project_name        = var.project_name
+  s3_bucket_id        = module.s3_static_site.bucket_id
+  s3_bucket_arn       = module.s3_static_site.bucket_arn
+  s3_bucket_region    = module.s3_static_site.bucket_region
+  default_root_object = "index.html"
+  price_class         = "PriceClass_100"
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "Terraform"
+    Purpose     = "CDN Distribution"
+  }
+
+  # Ensure S3 module is created first
+  depends_on = [module.s3_static_site]
+}

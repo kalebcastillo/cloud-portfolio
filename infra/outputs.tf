@@ -23,3 +23,19 @@ output "s3_bucket_arn" {
   description = "ARN of the S3 bucket"
   value       = module.s3_static_site.bucket_arn
 }
+
+# CloudFront Outputs
+output "cloudfront_distribution_id" {
+  description = "CloudFront distribution ID"
+  value       = module.cloudfront.distribution_id
+}
+
+output "cloudfront_domain_name" {
+  description = "CloudFront distribution domain name (e.g., d123abc.cloudfront.net)"
+  value       = module.cloudfront.domain_name
+}
+
+output "cloudfront_distribution_arn" {
+  description = "CloudFront distribution ARN"
+  value       = module.cloudfront.distribution_arn
+}

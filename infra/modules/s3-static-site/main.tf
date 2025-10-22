@@ -1,11 +1,11 @@
 # S3 bucket for static website hosting
 resource "aws_s3_bucket" "website" {
-  bucket = var.bucket_name
+  bucket = "${var.environment}-${var.project_name}-website"
 
   tags = merge(
     var.tags,
     {
-      Name = var.bucket_name
+      Name = "${var.environment}-${var.project_name}-website"
     }
   )
 }
