@@ -21,3 +21,18 @@ provider "aws" {
   region = var.aws_region
 }
 
+# S3 Static Website Module
+module "s3_static_site" {
+  source = "./modules/s3-static-site"
+
+  environment  = var.environment
+  project_name = var.project_name
+  bucket_name  = "${var.environment}-${var.project_name}-website"
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "Terraform"
+    Purpose     = "Static Website Hosting"
+  }
+}
+

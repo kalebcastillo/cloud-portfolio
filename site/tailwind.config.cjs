@@ -10,5 +10,17 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  corePlugins: {
+    preflight: false,
+  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    function ({ addComponents }) {
+      addComponents({
+        ".btn-regular-dark": {
+          "@apply bg-slate-700 text-white hover:bg-slate-600 transition-colors": {},
+        },
+      })
+    },
+  ],
 }
