@@ -12,10 +12,21 @@
 
   "forwardPorts": [4321, 4322, 4323],
 
+  "mounts": [
+    "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached"
+  ],
+
+  "remoteEnv": {
+    "AWS_PROFILE": "terraform-dev",
+    "AWS_CONFIG_FILE": "/home/vscode/.aws/config",
+    "AWS_SHARED_CREDENTIALS_FILE": "/home/vscode/.aws/credentials"
+  },
+
   "portsAttributes": {
     "4321": {
       "label": "Astro Dev Server",
-      "onAutoForward": "notify"
+      "onAutoForward": "notify",
+      "protocol": "http"
     }
   },
 

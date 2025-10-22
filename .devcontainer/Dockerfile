@@ -39,7 +39,8 @@ RUN pip install --no-cache-dir \
     requests \
     black \
     flake8 \
-    azure-cli
+    azure-cli \
+    awscli
 
 # Install Terraform
 RUN wget -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
