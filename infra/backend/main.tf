@@ -1,3 +1,6 @@
+# This backend configuration provisions the S3 bucket and DynamoDB table
+# Once provisioned, we can transfer the state to this remote backend
+
 terraform {
   required_version = ">= 1.8"
   required_providers {

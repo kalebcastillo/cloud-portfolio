@@ -72,3 +72,18 @@ module "route53" {
 
   depends_on = [module.cloudfront]
 }
+
+# ACM Certificate Module
+module "acm" {
+  source = "./modules/acm"
+
+  domain_name = var.domain_name
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "Terraform"
+    Purpose     = "SSL/TLS Certificate"
+  }
+
+  depends_on = [module.route53]
+}
