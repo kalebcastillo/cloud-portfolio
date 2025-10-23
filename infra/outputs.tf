@@ -50,3 +50,14 @@ output "root_domain_fqdn" {
   description = "Root domain FQDN pointing to CloudFront"
   value       = module.route53.root_domain_fqdn
 }
+
+# ACM Certificate Outputs
+output "certificate_arn" {
+  description = "ACM certificate ARN"
+  value       = module.acm.certificate_arn
+}
+
+output "certificate_domain_name" {
+  description = "Domain name on the ACM certificate"
+  value       = module.acm.certificate_domain_name
+}

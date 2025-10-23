@@ -30,14 +30,21 @@ variable "default_root_object" {
 }
 
 variable "price_class" {
-  description = "CloudFront price class (PriceClass_All, PriceClass_100, PriceClass_200)"
+  description = "CloudFront price class"
   type        = string
   default     = "PriceClass_100"
+}
 
-  validation {
-    condition     = contains(["PriceClass_All", "PriceClass_100", "PriceClass_200"], var.price_class)
-    error_message = "price_class must be PriceClass_All, PriceClass_100, or PriceClass_200."
-  }
+variable "certificate_arn" {
+  description = "ACM certificate ARN for HTTPS on custom domain"
+  type        = string
+  default     = ""
+}
+
+variable "domain_names" {
+  description = "Domain names to associate with CloudFront"
+  type        = list(string)
+  default     = []
 }
 
 variable "tags" {
@@ -45,4 +52,3 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-

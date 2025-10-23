@@ -35,6 +35,19 @@ module "s3_static_site" {
   }
 }
 
+# ACM Certificate Module (hosted zone already exists in Route53)
+module "acm" {
+  source = "./modules/acm"
+
+  domain_name = var.domain_name
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "Terraform"
+    Purpose     = "SSL/TLS Certificate"
+  }
+}
+
 # CloudFront CDN Module
 module "cloudfront" {
   source = "./modules/cloudfront"
@@ -46,6 +59,8 @@ module "cloudfront" {
   s3_bucket_region    = module.s3_static_site.bucket_region
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
+  certificate_arn     = module.acm.certificate_arn
+  domain_names        = [var.domain_name]
 
   tags = {
     Environment = var.environment
@@ -53,10 +68,10 @@ module "cloudfront" {
     Purpose     = "CDN Distribution"
   }
 
-  depends_on = [module.s3_static_site]
+  depends_on = [module.s3_static_site, module.acm]
 }
 
-# Route53 DNS Module
+# Route53 DNS Module (points domain to CloudFront)
 module "route53" {
   source = "./modules/route53"
 
@@ -71,19 +86,4 @@ module "route53" {
   }
 
   depends_on = [module.cloudfront]
-}
-
-# ACM Certificate Module
-module "acm" {
-  source = "./modules/acm"
-
-  domain_name = var.domain_name
-
-  tags = {
-    Environment = var.environment
-    ManagedBy   = "Terraform"
-    Purpose     = "SSL/TLS Certificate"
-  }
-
-  depends_on = [module.route53]
 }

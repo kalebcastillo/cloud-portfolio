@@ -78,10 +78,16 @@ resource "aws_cloudfront_distribution" "website" {
     }
   }
 
-  # Viewer certificate using CloudFront default certificate
+  # Viewer certificate
   viewer_certificate {
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = var.certificate_arn == "" ? true : false
+    acm_certificate_arn            = var.certificate_arn != "" ? var.certificate_arn : null
+    ssl_support_method             = var.certificate_arn != "" ? "sni-only" : null
+    minimum_protocol_version       = var.certificate_arn != "" ? "TLSv1.2_2021" : null
   }
+
+  # Domain aliases for the distribution (only with ACM certificate)
+  aliases = var.certificate_arn != "" ? var.domain_names : []
 
   tags = merge(
     var.tags,
