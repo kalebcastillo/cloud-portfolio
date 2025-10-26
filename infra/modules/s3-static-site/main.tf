@@ -38,7 +38,3 @@ resource "aws_s3_bucket_public_access_block" "website" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
-
-# Bucket policy to allow CloudFront access
-# This will be created later when we add CloudFront module
-# For now, the bucket is private

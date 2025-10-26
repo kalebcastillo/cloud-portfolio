@@ -1,3 +1,14 @@
+# Get AWS account ID for the bucket policy
+data "aws_caller_identity" "current" {}
+
+# AWS managed policy IDs (region: us-east-1)
+locals {
+  cache_policy_caching_optimized   = "658327ea-f89d-4fab-a63d-7e88639e58f6"
+  cache_policy_caching_disabled    = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
+  origin_request_policy_all_viewer = "b689b0a8-53d0-40ab-baf2-68738e2966ac"
+  response_headers_policy_security = "67f7725c-6f97-4210-82d7-5512b31e9d03"
+}
+
 # Origin Access Control to securely connect CloudFront to S3
 resource "aws_cloudfront_origin_access_control" "s3_oac" {
   name                              = "${var.environment}-${var.project_name}-oac"
@@ -48,9 +59,9 @@ resource "aws_cloudfront_distribution" "website" {
 
   # Default cache behavior for all requests
   default_cache_behavior {
-    cache_policy_id            = data.aws_cloudfront_cache_policy.managed_caching_optimized.id
-    origin_request_policy_id   = data.aws_cloudfront_origin_request_policy.managed_all_viewer.id
-    response_headers_policy_id = data.aws_cloudfront_response_headers_policy.managed_security_headers.id
+    cache_policy_id            = local.cache_policy_caching_optimized
+    origin_request_policy_id   = local.origin_request_policy_all_viewer
+    response_headers_policy_id = local.response_headers_policy_security
     allowed_methods            = ["GET", "HEAD", "OPTIONS"]
     cached_methods             = ["GET", "HEAD"]
     compress                   = true
@@ -61,9 +72,9 @@ resource "aws_cloudfront_distribution" "website" {
   # Cache behavior for index.html with shorter TTL for quick updates
   ordered_cache_behavior {
     path_pattern               = "index.html"
-    cache_policy_id            = data.aws_cloudfront_cache_policy.managed_caching_disabled.id
-    origin_request_policy_id   = data.aws_cloudfront_origin_request_policy.managed_all_viewer.id
-    response_headers_policy_id = data.aws_cloudfront_response_headers_policy.managed_security_headers.id
+    cache_policy_id            = local.cache_policy_caching_disabled
+    origin_request_policy_id   = local.origin_request_policy_all_viewer
+    response_headers_policy_id = local.response_headers_policy_security
     allowed_methods            = ["GET", "HEAD", "OPTIONS"]
     cached_methods             = ["GET", "HEAD"]
     compress                   = true
@@ -92,27 +103,4 @@ resource "aws_cloudfront_distribution" "website" {
   tags = {
     Name = "${var.environment}-${var.project_name}-distribution"
   }
-}
-
-# Get AWS account ID for the bucket policy
-data "aws_caller_identity" "current" {}
-
-# Get managed cache policy for optimized caching
-data "aws_cloudfront_cache_policy" "managed_caching_optimized" {
-  name = "Managed-CachingOptimized"
-}
-
-# Get managed cache policy for no caching (for index.html)
-data "aws_cloudfront_cache_policy" "managed_caching_disabled" {
-  name = "Managed-CachingDisabled"
-}
-
-# Get managed origin request policy for all viewer headers
-data "aws_cloudfront_origin_request_policy" "managed_all_viewer" {
-  name = "Managed-AllViewerExceptHostHeader"
-}
-
-# Get managed response headers policy for security headers
-data "aws_cloudfront_response_headers_policy" "managed_security_headers" {
-  name = "Managed-SecurityHeadersPolicy"
 }
