@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+import { onMount } from "svelte";
 
-	let views: number = 0;
-	let isLoading = true;
+let views = 0;
+let isLoading = true;
 
-	onMount(async () => {
-		// Wait a bit for the counter to be updated in Layout.astro
-		await new Promise(resolve => setTimeout(resolve, 100));
-		
-		if (typeof window !== 'undefined' && window.portfolioViews !== undefined) {
-			views = window.portfolioViews;
-		}
-		
-		isLoading = false;
-	});
+onMount(async () => {
+	// Wait a bit for the counter to be updated in Layout.astro
+	await new Promise((resolve) => setTimeout(resolve, 100));
+
+	if (typeof window !== "undefined" && window.portfolioViews !== undefined) {
+		views = window.portfolioViews;
+	}
+
+	isLoading = false;
+});
 </script>
 
 <div class="flex items-center gap-1">
