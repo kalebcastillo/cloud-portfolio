@@ -18,6 +18,14 @@ resource "aws_cloudfront_origin_access_control" "s3_oac" {
   signing_protocol                  = "sigv4"
 }
 
+# CloudFront Function for URL rewriting (SPA routing)
+resource "aws_cloudfront_function" "url_rewrite" {
+  name    = "${var.environment}-${var.project_name}-url-rewrite"
+  runtime = "cloudfront-js-1.0"
+  publish = true
+  code    = file("${path.module}/function.js")
+}
+
 # S3 bucket policy to allow only CloudFront OAC to access objects
 resource "aws_s3_bucket_policy" "cloudfront_access" {
   bucket = var.s3_bucket_id
@@ -67,6 +75,11 @@ resource "aws_cloudfront_distribution" "website" {
     compress                   = true
     viewer_protocol_policy     = "redirect-to-https"
     target_origin_id           = "s3Origin"
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.url_rewrite.arn
+    }
   }
 
   # Cache behavior for index.html with shorter TTL for quick updates
