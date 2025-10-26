@@ -3,7 +3,7 @@ import boto3
 import os
 
 def lambda_handler(event, context):
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
     table_name = os.environ.get('TABLE_NAME')
     table = dynamodb.Table(table_name)
     
