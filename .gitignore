@@ -10,9 +10,7 @@ override.tf.json
 *.tfplan
 *.backup
 *tfbackend.hcl
-*.tfvars
 *.auto.tfvars
-!*.example.tfvars
 
 # --- Python ---
 __pycache__/
