@@ -89,12 +89,9 @@ resource "aws_cloudfront_distribution" "website" {
   # Domain aliases for the distribution (only with ACM certificate)
   aliases = var.certificate_arn != "" ? var.domain_names : []
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-${var.project_name}-distribution"
-    }
-  )
+  tags = {
+    Name = "${var.environment}-${var.project_name}-distribution"
+  }
 }
 
 # Get AWS account ID for the bucket policy

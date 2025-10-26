@@ -2,12 +2,11 @@
 resource "aws_s3_bucket" "website" {
   bucket = "${var.environment}-${var.project_name}-website"
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-${var.project_name}-website"
-    }
-  )
+  tags = {
+    Name        = "${var.environment}-${var.project_name}-website"
+    Environment = var.environment
+    Project     = var.project_name
+  }
 }
 
 # Enable versioning to track changes

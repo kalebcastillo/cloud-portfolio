@@ -1,8 +1,8 @@
 # DynamoDB Table for portfolio view counter
 resource "aws_dynamodb_table" "portfolio_counter" {
-  name           = "${var.environment}-portfolio-counter"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "id"
+  name         = "${var.environment}-portfolio-counter"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "id"
 
   attribute {
     name = "id"
@@ -91,12 +91,12 @@ resource "aws_lambda_function" "portfolio_counter" {
 
 # Lambda Function URL
 resource "aws_lambda_function_url" "portfolio_counter" {
-  function_name          = aws_lambda_function.portfolio_counter.function_name
-  authorization_type    = "NONE"
+  function_name      = aws_lambda_function.portfolio_counter.function_name
+  authorization_type = "NONE"
   cors {
     allow_credentials = true
     allow_origins     = var.allowed_origins
-    allow_methods     = ["GET", "POST"]
+    allow_methods     = ["GET", "POST", "PUT"]
     allow_headers     = ["Content-Type"]
     expose_headers    = ["Content-Length"]
     max_age           = 86400
