@@ -61,3 +61,19 @@ output "certificate_domain_name" {
   description = "Domain name on the ACM certificate"
   value       = module.acm.certificate_domain_name
 }
+
+# View Counter Outputs
+output "lambda_function_url" {
+  description = "HTTPS endpoint URL for the view counter Lambda function"
+  value       = module.view_counter.lambda_function_url
+}
+
+output "dynamodb_table_name" {
+  description = "Name of the DynamoDB table for view counter"
+  value       = module.view_counter.dynamodb_table_name
+}
+
+output "lambda_function_name" {
+  description = "Name of the view counter Lambda function"
+  value       = module.view_counter.lambda_function_name
+}

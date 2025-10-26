@@ -87,3 +87,21 @@ module "route53" {
 
   depends_on = [module.cloudfront]
 }
+
+# View Counter Module (DynamoDB + Lambda)
+module "view_counter" {
+  source = "./modules/view-counter"
+
+  environment = var.environment
+  
+  allowed_origins = [
+    "https://${var.domain_name}",
+    var.environment == "test" ? "https://test.${var.domain_name}" : ""
+  ]
+
+  tags = {
+    Environment = var.environment
+    ManagedBy   = "Terraform"
+    Purpose     = "Portfolio View Counter"
+  }
+}
