@@ -15,18 +15,8 @@ resource "aws_dynamodb_table" "portfolio_counter" {
   }
 }
 
-# Initial item in DynamoDB table
-resource "aws_dynamodb_table_item" "counter_initial" {
-  table_name = aws_dynamodb_table.portfolio_counter.name
-  hash_key   = aws_dynamodb_table.portfolio_counter.hash_key
-
-  item = jsonencode({
-    id    = { S = "0" }
-    views = { N = "0" }
-  })
-
-  depends_on = [aws_dynamodb_table.portfolio_counter]
-}
+# Note: Initial item is created by Lambda function on first invocation
+# This prevents the counter from being reset to 0 on each terraform apply
 
 # Create a minimal IAM role for Lambda
 resource "aws_iam_role" "lambda_role" {
