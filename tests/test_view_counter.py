@@ -1,6 +1,6 @@
 import os
 import sys
-from moto import mock_dynamodb
+from moto import mock_aws
 import boto3
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../infra/modules/view-counter/lambda"))
@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../infra/modules/vie
 from view_counter_function import lambda_handler
 
 
-@mock_dynamodb
+@mock_aws
 def test_increment_view_count():
     os.environ["TABLE_NAME"] = "test-portfolio-counter"
     

@@ -3,10 +3,11 @@ import boto3
 import os
 
 dynamodb = boto3.resource('dynamodb')
-table_name = os.environ.get('TABLE_NAME')
-table = dynamodb.Table(table_name)
 
 def lambda_handler(event, context):
+    table_name = os.environ.get('TABLE_NAME')
+    table = dynamodb.Table(table_name)
+    
     try:
         response = table.get_item(Key={'id': '0'})
         views = response.get('Item', {}).get('views', 0)
