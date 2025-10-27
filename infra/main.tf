@@ -105,3 +105,15 @@ module "view_counter" {
     Purpose     = "Portfolio View Counter"
   }
 }
+
+# CloudWatch Monitoring and Alerts
+module "cloudwatch_monitoring" {
+  source = "./modules/cloudwatch-monitoring"
+
+  project_name         = var.project_name
+  environment          = var.environment
+  alert_email          = var.alert_email
+  lambda_function_name = module.view_counter.lambda_function_name
+
+  depends_on = [module.view_counter]
+}
