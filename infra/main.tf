@@ -30,8 +30,6 @@ module "s3_static_site" {
 
   tags = {
     Environment = var.environment
-    ManagedBy   = "Terraform"
-    Purpose     = "Static Website Hosting"
   }
 }
 
@@ -43,8 +41,6 @@ module "acm" {
 
   tags = {
     Environment = var.environment
-    ManagedBy   = "Terraform"
-    Purpose     = "SSL/TLS Certificate"
   }
 }
 
@@ -64,8 +60,6 @@ module "cloudfront" {
 
   tags = {
     Environment = var.environment
-    ManagedBy   = "Terraform"
-    Purpose     = "CDN Distribution"
   }
 
   depends_on = [module.s3_static_site, module.acm]
@@ -77,12 +71,9 @@ module "route53" {
 
   domain_name            = var.domain_name
   cloudfront_domain_name = module.cloudfront.domain_name
-  cloudfront_zone_id     = "Z2FDTNDATAQYW2"
 
   tags = {
     Environment = var.environment
-    ManagedBy   = "Terraform"
-    Purpose     = "DNS Records"
   }
 
   depends_on = [module.cloudfront]
@@ -94,15 +85,8 @@ module "view_counter" {
 
   environment = var.environment
 
-  allowed_origins = [
-    "https://kalebcastillo.com",
-    "https://test.kalebcastillo.com"
-  ]
-
   tags = {
     Environment = var.environment
-    ManagedBy   = "Terraform"
-    Purpose     = "Portfolio View Counter"
   }
 }
 

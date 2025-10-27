@@ -38,13 +38,11 @@ variable "price_class" {
 variable "certificate_arn" {
   description = "ACM certificate ARN for HTTPS on custom domain"
   type        = string
-  default     = ""
 }
 
 variable "domain_names" {
   description = "Domain names to associate with CloudFront"
   type        = list(string)
-  default     = []
 }
 
 variable "tags" {

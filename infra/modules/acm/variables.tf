@@ -3,12 +3,6 @@ variable "domain_name" {
   type        = string
 }
 
-variable "create_certificate" {
-  description = "Whether to create the certificate"
-  type        = bool
-  default     = true
-}
-
 variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)

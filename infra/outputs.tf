@@ -1,18 +1,3 @@
-output "environment" {
-  description = "Current environment"
-  value       = var.environment
-}
-
-output "project_name" {
-  description = "Project name"
-  value       = var.project_name
-}
-
-output "aws_region" {
-  description = "AWS region"
-  value       = var.aws_region
-}
-
 # S3 Static Website Outputs
 output "s3_bucket_name" {
   description = "Name of the S3 bucket hosting the static website"
@@ -66,14 +51,4 @@ output "certificate_domain_name" {
 output "lambda_function_url" {
   description = "HTTPS endpoint URL for the view counter Lambda function"
   value       = module.view_counter.lambda_function_url
-}
-
-output "dynamodb_table_name" {
-  description = "Name of the DynamoDB table for view counter"
-  value       = module.view_counter.dynamodb_table_name
-}
-
-output "lambda_function_name" {
-  description = "Name of the view counter Lambda function"
-  value       = module.view_counter.lambda_function_name
 }

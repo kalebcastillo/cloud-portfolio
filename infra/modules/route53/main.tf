@@ -3,6 +3,10 @@ data "aws_route53_zone" "main" {
   name = var.domain_name
 }
 
+locals {
+  cloudfront_zone_id = "Z2FDTNDATAQYW2"
+}
+
 # Root domain A record (alias to CloudFront)
 resource "aws_route53_record" "root" {
   zone_id = data.aws_route53_zone.main.zone_id
@@ -11,7 +15,7 @@ resource "aws_route53_record" "root" {
 
   alias {
     name                   = var.cloudfront_domain_name
-    zone_id                = var.cloudfront_zone_id
+    zone_id                = local.cloudfront_zone_id
     evaluate_target_health = false
   }
 }
@@ -24,7 +28,7 @@ resource "aws_route53_record" "root_ipv6" {
 
   alias {
     name                   = var.cloudfront_domain_name
-    zone_id                = var.cloudfront_zone_id
+    zone_id                = local.cloudfront_zone_id
     evaluate_target_health = false
   }
 }

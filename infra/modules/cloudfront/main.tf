@@ -104,14 +104,13 @@ resource "aws_cloudfront_distribution" "website" {
 
   # Viewer certificate
   viewer_certificate {
-    cloudfront_default_certificate = var.certificate_arn == "" ? true : false
-    acm_certificate_arn            = var.certificate_arn != "" ? var.certificate_arn : null
-    ssl_support_method             = var.certificate_arn != "" ? "sni-only" : null
-    minimum_protocol_version       = var.certificate_arn != "" ? "TLSv1.2_2021" : null
+    acm_certificate_arn      = var.certificate_arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
 
-  # Domain aliases for the distribution (only with ACM certificate)
-  aliases = var.certificate_arn != "" ? var.domain_names : []
+  # Domain aliases for the distribution
+  aliases = var.domain_names
 
   tags = {
     Name = "${var.environment}-${var.project_name}-distribution"
