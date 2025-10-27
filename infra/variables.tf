@@ -26,3 +26,10 @@ variable "domain_name" {
   description = "Root domain name for Route53 DNS records"
   type        = string
 }
+
+variable "alert_email" {
+  description = "Email address to receive CloudWatch alerts"
+  type        = string
+  sensitive   = true
+}
+
