@@ -4,7 +4,7 @@ published: 2025-09-08
 description: 'Completing and contributing to the Learn to Cloud Phase 2 Capstone'
 image: '../../assets/images/open-source-cover.png'
 tags: [Projects, Python, Docker, FastAPI]
-category: 'Projects'
+category: 'Blogs'
 draft: false 
 lang: ''
 ---
