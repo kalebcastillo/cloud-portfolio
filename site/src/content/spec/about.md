@@ -9,7 +9,7 @@ Some facts about me:
 - I watch an unhealthy amount of basketball. My favorite NBA team is the OKC Thunder. (CHAMPS)
 - I did sleep in front of MicroCenter to get a RTX 3080 during the GPU chip shortage...
 
-![Engaged](/src/assets/images/picture.png)
+![Engaged](../../assets/images/picture.png)
 
 In 2025 I've been motivated to transition into the more cloud-native space, which has guided me toward learning the skills required to become a full-on Cloud/DevOps Engineer. I've delved into Linux, Python, API's, Databases, Docker, Kubernetes, DevOps methodologies, and more. This site serves as live project which represents a culmination of a lot of the skills I've learned thus far.
 
