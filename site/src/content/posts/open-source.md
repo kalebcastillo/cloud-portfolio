@@ -116,3 +116,5 @@ I want to create something fun using this. It will provide me with a great oppor
 I'm not sure yet which direction I will go. It will probably be focused around my favorite team, the OKC Thunder (and our recent championship 😉). If you love basketball and especially the Thunder as much as I do, perhaps follow [my GitHub](https://github.com/kalebcastillo) to catch what I work on.
 
 Thanks for reading, and go learn how to Cloud! 🚀
+
+::github{repo="kalebcastillo/journal-starter"}

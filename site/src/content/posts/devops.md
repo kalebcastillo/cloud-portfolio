@@ -3,7 +3,7 @@ title: Containers and Jenkins
 published: 2025-10-03
 description: 'Containerizing a two-tier application with Docker and Jenkins'
 image: '../../assets/images/devops.png'
-tags: [Projects, DevOps, Docker, Jenkins, Github Actions]
+tags: [Projects, DevOps, Docker, Jenkins, Github Actions, CI/CD]
 category: 'Projects'
 draft: false 
 lang: ''
@@ -94,3 +94,5 @@ As of now, the pipeline does not actually run tests on the application code, nor
 
 
 Thank you for reading!
+
+::github{repo="kalebcastillo/journal-app-devops"}

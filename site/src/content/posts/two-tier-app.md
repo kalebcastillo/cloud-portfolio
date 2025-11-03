@@ -1,7 +1,7 @@
 ---
-title: Azure Two-Tier App
-published: 2025-10-31
-description: 'Building a two-tier applicaiton architecture in Azure'
+title: Azure Two-Tier Architecture
+published: 2025-09-24
+description: 'Building a two-tier application architecture in Azure'
 image: '../../assets/images/two-tier.png'
 tags: [Projects, Azure, Networking]
 category: 'Projects'
@@ -11,15 +11,9 @@ lang: ''
 
 This project was built as part of the Cloud Engineering courseware, Learn to Cloud. Visit here to learn more: https://learntocloud.guide/
 
-
-# Architecture Diagram
-
 In this project, we've deployed an existing journal API + Database to Azure using a two-tier architecture. The primary goal of this exercise was to understand cloud architecture patterns, especially regarding networking. We also delve into some Linux Systems Administration.
 
-<img width="1872" height="1828" alt="KalebPhase3_DarkMode" src="https://github.com/user-attachments/assets/6b707e4a-8b9f-49c2-a6ce-fbe743f9b9be" />
-
-
-# Goals for this project
+# Goals
 
 Let's first define our end goals for the environment. In addition to your application of course functioning as expected, we want to accomplish the following:
 
@@ -372,3 +366,5 @@ However, even better would be to define these resources via Terraform.
 I intend to do that in the near future, as well as implement other DevOps methodologies to this project.
 
 If you notice any other ways this project can be improved, please let me know! I'm actively working on learning more regarding best practices.
+
+::github{repo="kalebcastillo/azure-two-tier-app"}

@@ -1,60 +1,55 @@
-# Resume
+# Kaleb Castillo
 
-## Kaleb Castillo
-
-Jersey City, NJ | [kaleb.castillo@gmail.com](mailto:kaleb.castillo@gmail.com) | 551-689-2339 | [LinkedIn](https://www.linkedin.com/in/kaleb-castillo) | [GitHub](https://github.com/kalebcastillo)
+**[kalebcastillo.com](https://kalebcastillo.com)** | [GitHub](https://github.com/kalebcastillo) | [kaleb.castillo@gmail.com](mailto:kaleb.castillo@gmail.com) | 551-689-2339 | Jersey City, NJ  
 
 ---
 
 ## Projects
 
-- **AWS Hosted Cloud Portfolio/Blog** - Full-stack serverless portfolio built with Terraform, Astro, Lambda, DynamoDB; features a dual environment CI/CD pipeline via GitHub Actions
-- **Container and Jenkins** - Containerized two-tier application with Docker and an automated CI/CD pipeline using Jenkins and Docker Cloud agents
-- **Learn to Cloud Phase 2 Capstone** - Completed and contributed to open-source Learn to Cloud Phase 2 Capstone, a FastAPI + PostgreSQL journal application
-- **Azure Two-Tier Application Architecture** - Deployed two-tier architecture in Azure with and automated database backups to blob storage
+- **AWS Hosted Cloud Portfolio** – Designed and deployed a full-stack serverless portfolio using Terraform, Astro, Lambda, and DynamoDB; implemented dual test and production CI/CD pipelines with GitHub Actions  
+- **Azure Two-Tier App Architecture** – Built a secure Azure VNet with load balancing, segmented subnets, and NSG rules; automated PostgreSQL backups to Blob Storage  
+- **Learn to Cloud Phase 2 Capstone** – Contributed via GitHub to a FastAPI + PostgreSQL application written in Python; implemented deployment enhancements with Docker and collaborated on codebase improvements  
+- **Containerized CI/CD Pipeline** – Containerized a FastAPI + PostgreSQL application using Docker; orchestrated automated builds and deployments with Jenkins and GitHub Actions  
 
 ---
 
 ## Certifications
 
-- Terraform Associate
-- Microsoft Azure Administrator (AZ-104)
-- Cisco Certified Network Associate (CCNA)
-- CompTIA A+
+- Terraform Certified Associate  
+- Microsoft Azure Administrator (AZ-104)  
+- Cisco Certified Networking Associate (CCNA)
+- Certified Kubernetes Administrator (CKA) – In Progress
 
 ---
 
 ## Experience
 
-### IT Systems Administrator
-**ConnectOne Bank** | Englewood Cliffs, NJ | April 2022 – Present
+### ConnectOne Bank – Englewood Cliffs, NJ  
+**IT Systems Administrator | 2022 – Present**  
+- Collaborate with Data and SWE teams to integrate SSO across enterprise applications using Azure Entra ID  
+- Implemented Azure Site Recovery and Azure Disk Encryption across all servers, improving compliance posture  
+- Automated Azure server governance checks with PowerShell, saving 10+ engineer-hours weekly  
+- Deployed and maintain Acronis Snap Deploy imaging solution, reducing imaging time by 80%  
+- Manage WhatsUpGold for centralized server, UPS, and PDU monitoring, maintaining 99.9% uptime  
+- Administer PDQ Deploy and Inventory for automated application and security patch deployments  
+- Led the implementation of ParkPlace hardware monitoring for physical server fleet  
+- Manage Group Policy to enforce security and configuration standards across all devices and user accounts  
 
-- Create Azure Entra ID app integrations to implement SSO across company applications
-- Implement Azure Disk Encryption and Azure Site Recovery across all servers, improving compliance posture
-- Implement PowerShell scripting to reduce server governance check man hours by 12 hours per week
-- Build and maintain Acronis Snap Deploy laptop imaging solution, reducing imaging time by 80%
-- Manage WhatsUpGold monitoring solution, maintaining infrastructure uptime at 99.9%
-- Create and maintain PDQ Inventory and Deploy, streamlining bank-wide application deployments
-- Lead implementation of ParkPlace hardware monitoring for physical server footprint
+### Five Rivers IT – Rochelle Park, NJ  
+**Systems Engineer | 2020 – 2022**  
+- Led network infrastructure upgrade for 100+ user environment, improving performance and reliability  
+- Served as primary technical resource for two midsize clients, maintaining close collaboration with leadership to strengthen partnerships  
+- Acted as an escalation point for Service Desk team, providing advanced troubleshooting support  
 
-### Systems Engineer
-**Five Rivers IT** | Rochelle Park, NJ | June 2020 – April 2022
-
-- Significant contributor to network infrastructure upgrade for organization of 100+ users, including network upgrades and power distribution planning
-- Primary technical resource for two midsize organizations, maintaining effective collaboration with leadership to strengthen partnerships
-- Direct escalation point for Service Desk team
-
-### Help Desk Analyst
-**Solarus Technologies** | New York, NY | July 2018 – December 2019
-
-- Consistently top the help desk leaderboards for tickets completed per week
-- Provided onsite and remote technical troubleshooting to client base of 60+ companies
-- Developed excellent rapport with small business owners, delivering consistent, high-quality support and contributing to strong client retention metrics
+### Solarus Technologies – New York, NY  
+**Help Desk Analyst | 2018 – 2020**  
+- Consistently topped help desk leaderboards for tickets completed per week  
+- Provided onsite and remote technical troubleshooting to client base of 60+ companies  
+- Developed excellent rapport with small business owners, delivering high-quality support and contributing to strong client retention metrics  
 
 ---
 
 ## Education
 
-**Rutgers, The State University of New Jersey** | Newark, NJ | 2015–2017
-
-- Major: Information Systems
+**Rutgers University – Newark, NJ**  
+*Major: Information Systems | 2015 – 2017*

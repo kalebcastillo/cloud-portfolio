@@ -8,12 +8,20 @@ interface Props {
 	alt?: string;
 	position?: string;
 	basePath?: string;
+	objectFit?: "cover" | "contain";
 }
 
 import { Image } from "astro:assets";
 import { url } from "../../utils/url-utils";
 
-const { id, src, alt, position = "center", basePath = "/" } = Astro.props;
+const {
+	id,
+	src,
+	alt,
+	position = "center",
+	basePath = "/",
+	objectFit = "contain",
+} = Astro.props;
 const className = Astro.props.class;
 
 const isLocal = !(
@@ -44,7 +52,7 @@ if (isLocal) {
 	img = await file();
 }
 
-const imageClass = "w-full h-full object-contain";
+const imageClass = `w-full h-full object-${objectFit}`;
 const imageStyle = `object-position: ${position}`;
 ---
 
