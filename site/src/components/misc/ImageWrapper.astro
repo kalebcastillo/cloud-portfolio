@@ -52,8 +52,8 @@ if (isLocal) {
 	img = await file();
 }
 
-const imageClass = `w-full h-full object-${objectFit}`;
-const imageStyle = `object-position: ${position}`;
+const imageClass = "w-full h-full";
+const imageStyle = `object-fit: ${objectFit}; object-position: ${position}`;
 ---
 
 <div id={id} class:list={[className, "overflow-hidden relative"]}>

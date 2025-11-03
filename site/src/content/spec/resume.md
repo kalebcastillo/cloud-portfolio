@@ -6,10 +6,10 @@
 
 ## Projects
 
-- **AWS Hosted Cloud Portfolio** – Designed and deployed a full-stack serverless portfolio using Terraform, Astro, Lambda, and DynamoDB; implemented dual test and production CI/CD pipelines with GitHub Actions  
-- **Azure Two-Tier App Architecture** – Built a secure Azure VNet with load balancing, segmented subnets, and NSG rules; automated PostgreSQL backups to Blob Storage  
-- **Learn to Cloud Phase 2 Capstone** – Contributed via GitHub to a FastAPI + PostgreSQL application written in Python; implemented deployment enhancements with Docker and collaborated on codebase improvements  
-- **Containerized CI/CD Pipeline** – Containerized a FastAPI + PostgreSQL application using Docker; orchestrated automated builds and deployments with Jenkins and GitHub Actions  
+- **[AWS Hosted Cloud Portfolio](https://github.com/kalebcastillo/cloud-portfolio)** – Designed and deployed a full-stack serverless portfolio using Terraform, Astro, Lambda, and DynamoDB; implemented dual test and production CI/CD pipelines with GitHub Actions  
+- **[Azure Two-Tier App Architecture](https://kalebcastillo.com/posts/two-tier-app/)** – Built a secure Azure VNet with load balancing, segmented subnets, and NSG rules; automated PostgreSQL backups to Blob Storage  
+- **[Learn to Cloud Phase 2 Capstone](https://kalebcastillo.com/posts/open-source/)** – Contributed via GitHub to a FastAPI + PostgreSQL application written in Python; implemented deployment enhancements with Docker and collaborated on codebase improvements  
+- **[Containerized CI/CD Pipeline](https://kalebcastillo.com/posts/devops/)** – Containerized a FastAPI + PostgreSQL application using Docker; orchestrated automated builds and deployments with Jenkins and GitHub Actions  
 
 ---
 

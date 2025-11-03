@@ -4,6 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import ConfigCarrier from "@components/ConfigCarrier.astro";
+import ImageWrapper from "@components/misc/ImageWrapper.astro";
 import { profileConfig, siteConfig } from "@/config";
 import {
 	AUTO_MODE,
@@ -218,6 +219,28 @@ const bannerOffset =
 		]}
 		data-overlayscrollbars-initialize
 	>
+		<!-- Banner - rendered at body level for full viewport width -->
+		{
+			enableBanner && (
+				<div
+					id="banner-wrapper"
+					class={`fixed inset-x-0 z-10 transition duration-700 overflow-hidden`}
+					style={`top: -${BANNER_HEIGHT_EXTEND}vh`}
+				>
+					<ImageWrapper
+						id="banner"
+						alt="Banner image of the blog"
+						class:list={[
+							"h-full transition duration-700 opacity-0 scale-105",
+						]}
+						src={banner}
+						position={siteConfig.banner.position}
+						objectFit="cover"
+					/>
+				</div>
+			)
+		}
+
 		<ConfigCarrier />
 		<slot />
 
