@@ -1,7 +1,9 @@
 # About Me
 Hey! I'm Kaleb. Welcome to my Cloud Portfolio site.
 
-I've been working in IT since 2018. I got my start in the same way many people have. Getting my A+ certification and landing that first Help Desk role. Since then, I've always spent a good amount of my free time learning and trying to become a skilled IT professional. That led me to going down the networking route, attaining my CCNA and moving beyond the Help Desk. Later a desire to transition to Cloud led me to grab my AZ-104 and land a System Administrator role where I currently work today.
+I've been working in IT since 2018, starting the same way many in the industry have — getting my A+ certitication and landing that first Help Desk role. I've always invested significant time outside of work to grow my skills. This initially led me down the networking path, acquiring my CCNA certification. Later that foundation provided great value as I became interested in Cloud. I began exploring Azure, replicating my VMWare home lab to my personal Azure environment. I then earned my AZ-104 and transitioned into my current role as a System Administrator.
+
+In 2025, I've focused on transitioning into the cloud-native space, working to build the skills needed to become a Cloud/DevOps Engineer. I've been learning Linux, Python, APIs, databases, Docker, Kubernetes, DevOps methodologies, and more. This site is a live project that demonstrates many of the skills I've acquired.
 
 Some facts about me:
 - Born and raised in Jersey City, where I still live with my fiancée
@@ -11,12 +13,9 @@ Some facts about me:
 
 ![Engaged](../../assets/images/picture.png)
 
-In 2025 I've been motivated to transition into the more cloud-native space, which has guided me toward learning the skills required to become a full-on Cloud/DevOps Engineer. I've delved into Linux, Python, API's, Databases, Docker, Kubernetes, DevOps methodologies, and more. This site serves as live project which represents a culmination of a lot of the skills I've learned thus far.
 
-Check out the repo for this site here, which contains a deployment guide if you want to deploy your own site with the same Terraforma and Astro template.
-
-::github{repo="kalebcastillo/cloud-portfolio"}
-
-A techincal blog is on the way as well.
+Please feel free to read through my techincal blogs and check out the repo for this site.
 
 Thanks for visiting!
+
+::github{repo="kalebcastillo/cloud-portfolio"}
