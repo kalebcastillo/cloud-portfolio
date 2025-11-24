@@ -19,7 +19,7 @@ jobs:
         working-directory: site
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 
       - name: Configure Git with GitHub token
         run: git config --global url."https://${{ github.token }}@github.com/".insteadOf "git@github.com:"
       - name: Setup Biome
@@ -40,7 +40,7 @@ jobs:
         working-directory: site
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Configure Git with GitHub token
         run: git config --global url."https://${{ github.token }}@github.com/".insteadOf "git@github.com:"
@@ -70,7 +70,7 @@ jobs:
         working-directory: site
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Configure Git with GitHub token
         run: git config --global url."https://${{ github.token }}@github.com/".insteadOf "git@github.com:"
@@ -112,7 +112,7 @@ jobs:
       AWS_DEFAULT_REGION: us-east-1
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Download dist artifact
         uses: actions/download-artifact@v6
@@ -145,7 +145,7 @@ jobs:
     name: Run Tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -182,7 +182,7 @@ jobs:
       AWS_DEFAULT_REGION: us-east-1
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Download dist artifact
         uses: actions/download-artifact@v6
