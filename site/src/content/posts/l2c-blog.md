@@ -29,7 +29,7 @@ There is also the decision of including or not including features. Just because 
 
 ## Delegation of Tasks
 
-Everyone has different levels of expertise across different domains. It's important to delegate tasks appropriately according to that reality. For example, Gwyn, being a developer, is the creator and maintainer of the codebase supporting the Learn to Cloud application itself. Rishab, with his DevOps experience and GCP expertise, developed the IaC, internal monitoring platform, and GCP labs. I, as the Junior DevOps Engineer, worked on the CI/CD architecture, Grafana dashboards, and AWS labs. This allowed us to work quickly, but also with accuracy, handling tasks according to our expertise.
+Everyone has different levels of expertise across different domains. It's important to delegate tasks appropriately according to that reality. For example, Gwyn, being a developer, is the creator and maintainer of the codebase supporting the Learn to Cloud application itself. Rishab, with his DevOps experience and GCP expertise, developed the IaC, internal monitoring platform, and GCP labs. As the Junior DevOps Engineer, I worked on the CI/CD architecture, Grafana dashboards, and AWS labs. This allowed us to work quickly, but also with accuracy, handling tasks according to our expertise.
 
 Communication was also important. Maintaining daily check-ins with each other on progress and next steps helped to keep the project consistently moving in a forward direction.
 
